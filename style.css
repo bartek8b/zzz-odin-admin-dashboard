@@ -10,30 +10,12 @@ body{
 aside{
     background-color: hsl(202, 78%, 47%);
     grid-area: 1 / 1 / 3 / 2;
-    display: flex;
-    flex-direction: column;
-    padding: 8px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 50px) repeat(6, 40px) 50px repeat(3, 40px) 1fr;
 }
 aside > * {
     filter: invert(1);
-}
-aside p{
-    font-weight: bold;
-    padding-inline: 8px;
-}
-.logo{
-    display: flex;
-}
-.logo > img {
-    width: 40px;
-}
-.logo > p {
-    font-size: 1.5rem;
-}
-
-.icon{
-    width: 40px;
-    border: 2px solid red;
 }
 
 /* header */
