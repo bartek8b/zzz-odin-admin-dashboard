@@ -16,6 +16,7 @@ aside{
     font-weight: bold;
     padding: 8px;
     align-items: center;
+    row-gap: 16px;
 }
 aside > * {
     filter: invert(1);
@@ -32,8 +33,7 @@ aside > a:visited {
     padding-bottom: 32px;
 }
 aside > img{
-    margin-inline: auto;
-    margin-block: 8px;    
+    margin-inline: auto; 
 }
 aside > img.dashboard-icon{
     width: 35px;
