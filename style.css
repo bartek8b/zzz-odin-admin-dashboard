@@ -1,6 +1,4 @@
 body{
-    height: 100vh;
-    width: 100vw;
     display: grid;
     grid-template-rows: 1fr 5fr;
     grid-template-columns: 1fr 5fr;
@@ -159,6 +157,14 @@ main{
     grid-template-rows: repeat(6, 1fr);
     gap: 16px;
 }
+.incard-header{
+    font-weight: bold;
+    font-size: .8rem;
+}
+.incard-text{
+    font-size: .7rem;
+    color: var(--darkGray);
+}
 /* left-main */
 .left-main{
     grid-area: 1 / 1 / 7 / 3;
@@ -186,12 +192,4 @@ main{
 }
 .anonuncements > div:not(:last-child) {
     border-bottom: 1px solid var(--gray);
-}
-.incard-header{
-    font-weight: bold;
-    font-size: .8rem;
-}
-.incard-text{
-    font-size: .7rem;
-    color: var(--darkGray);
 }
