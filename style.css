@@ -5,10 +5,16 @@ body{
     grid-template-rows: 1fr 5fr;
     grid-template-columns: 1fr 5fr;
 }
+:root{
+    --blue: hsl(202, 78%, 47%);
+    --white: hsl(0, 0%, 100%);
+    --gray: hsl(214, 32%, 95%);
+    --darkGray: hsl(214, 32%, 20%);
+}
 
 /* aside */
 aside{
-    background-color: hsl(202, 78%, 47%);
+    background-color: var(--blue);
     grid-area: 1 / 1 / 3 / 2;
     display: grid;
     grid-template-rows: repeat(10, auto) 1fr;
@@ -48,11 +54,14 @@ aside > p.bottom-space{
 
 /* header */
 header{
-    background-color: hsl(0, 0%, 100%);
+    background-color: var(--white);
     grid-area: 1 / 2 / 2 / 3;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: 11fr 7fr;
+    box-shadow: 1px 1px 5px lightgray;
+    z-index: 1;
+    
 }
 .search-bar{
     display: flex;
@@ -68,7 +77,7 @@ header{
     height: 30px;
     border-radius: 50px;
     border: none;
-    background-color: hsl(214, 32%, 91%);
+    background-color: var(--gray);
     padding: 8px;
 }
 .search-bar > input:focus{
@@ -87,8 +96,8 @@ header{
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    color: hsl(0, 0%, 100%);
-    background-color: hsl(202, 78%, 47%);
+    color: var(--white);
+    background-color: var(--blue);
     font-size: .8rem;
     font-weight: bold;
 }
@@ -142,6 +151,47 @@ header{
 }
 /* main */
 main{
-    background-color: hsl(214, 32%, 91%);
+    background-color: var(--gray);
     /* grid-area: 2 / 2 / 3 / 3; <- works even wothout this*/
+    padding: 32px 16px 64px 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 4fr) 3fr;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 16px;
+}
+/* left-main */
+.left-main{
+    grid-area: 1 / 1 / 7 / 3;
+}
+/* right-main */
+.right-main{
+    grid-area: 1 / 3 / 7 / 4;
+    gap: 16px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 32px 1fr);
+}
+.right-main > strong{
+    align-self: flex-end;
+}
+.right-main > div{
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px lightgray;
+    padding: 16px;
+}
+.anonuncements{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+}
+.anonuncements > div:not(:last-child) {
+    border-bottom: 1px solid var(--gray);
+}
+.incard-header{
+    font-weight: bold;
+    font-size: .8rem;
+}
+.incard-text{
+    font-size: .7rem;
+    color: var(--darkGray);
 }
