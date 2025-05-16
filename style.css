@@ -165,9 +165,25 @@ main{
     font-size: .8rem;
     color: var(--darkGray);
 }
-/* left-main */
+/* left-main + right-main in common styled elements */
 .left-main{
     grid-area: 1 / 1 / 7 / 3;
+    display: grid;
+    grid-template-rows: 32px 1fr;
+    gap: 16px;
+}
+.left-main > strong, .right-main > strong{
+    align-self: flex-end;
+}
+.projects-container > div, .right-main > div{
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px lightgray;
+    padding: 16px;
+}
+.projects-container{
+    display: grid;
+    gap: 16px;
 }
 /* right-main */
 .right-main{
@@ -176,15 +192,6 @@ main{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 32px 1fr);
-}
-.right-main > strong{
-    align-self: flex-end;
-}
-.right-main > div{
-    background-color: var(--white);
-    border-radius: 8px;
-    box-shadow: 1px 1px 5px lightgray;
-    padding: 16px;
 }
 .anonuncements{
     display: grid;
