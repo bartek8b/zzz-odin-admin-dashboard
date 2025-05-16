@@ -8,6 +8,7 @@ body{
     --white: hsl(0, 0%, 100%);
     --gray: hsl(214, 32%, 95%);
     --darkGray: hsl(214, 32%, 20%);
+    --yellow: hsl(42, 87%, 55%);
 }
 
 /* aside */
@@ -89,7 +90,7 @@ header{
     align-items: center;
 }
 .buttons-container > button{
-    aspect-ratio: 3 / 1;
+    aspect-ratio: 4 / 1;
     height: 32px;
     border-radius: 50px;
     border: none;
@@ -151,17 +152,17 @@ header{
 main{
     background-color: var(--gray);
     /* grid-area: 2 / 2 / 3 / 3; <- works even wothout this*/
-    padding: 32px 16px 64px 16px;
+    padding: 32px 20px 64px 20px;
     display: grid;
     grid-template-columns: repeat(2, 4fr) 3fr;
     grid-template-rows: repeat(6, 1fr);
-    gap: 16px;
+    gap: 20px;
 }
-.incard-header{
+.right-card-header{
     font-weight: bold;
     font-size: .9rem;
 }
-.incard-text{
+.right-card-text{
     font-size: .8rem;
     color: var(--darkGray);
 }
@@ -175,15 +176,35 @@ main{
 .left-main > strong, .right-main > strong{
     align-self: flex-end;
 }
+.projects-container{
+    display: grid;
+    gap: 20px;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+}
 .projects-container > div, .right-main > div{
     background-color: var(--white);
     border-radius: 8px;
     box-shadow: 1px 1px 5px lightgray;
-    padding: 16px;
+    padding: 24px;
 }
-.projects-container{
+.projects-container > div {
+    border-left: 8px solid var(--yellow);
     display: grid;
-    gap: 16px;
+    grid-template-rows: auto 1fr auto;
+}
+.project-description{
+    margin-top: 20px;
+    color: var(--darkGray);
+    font-size: .9rem;
+}
+.project-actions{
+    text-align: right;
+    & img{
+        width: 24px;
+        margin-inline: 16px;
+        cursor: pointer;
+    }
 }
 /* right-main */
 .right-main{
